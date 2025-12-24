@@ -8,7 +8,7 @@
         inset -2px -2px 4px rgba(0, 0, 0, 0.8),
         inset 1px 1px 1px rgba(255, 255, 255, 0.4);
     z-index: 50;
-    left: 172px;
+    left: 152px;
     bottom: 380px;
 }
 
@@ -43,6 +43,23 @@
     transform: rotate(-30deg);
     right: 83px;
 }
+.hitbox {
+  position: absolute;
+  width: 40px;  /* adjust to match paddle */
+  height: 10px;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0); /* invisible */
+}
+
+
+.flipper-left .flipper-rod {
+    transform-origin: left center; /* left corner stays */
+}
+
+.flipper-right .flipper-rod {
+    transform-origin: right center; /* right corner stays */
+}
 
 .flipper-rod {
     width: 100%;
@@ -51,14 +68,8 @@
     background-size: 100% 100%; /* stretch to exact width & height */
     box-shadow: 0 2px 4px rgba(0,0,0,0.5), inset -1px -1px 0 rgba(0,0,0,0.2);
     border-radius: 15px;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-.flipper-left.active .flipper-rod {
-    transform: rotate(-35deg);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px #ffff00;
-}
-
-.flipper-right.active .flipper-rod {
-    transform: rotate(35deg);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px #ffff00;
-}
+.flipper-left.active .flipper-rod { transform: rotate(-50deg); }
+.flipper-right.active .flipper-rod { transform: rotate(50deg); }
