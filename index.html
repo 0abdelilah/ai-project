@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinball - Windows 95/98 Style</title>
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/ball.css">
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <div class="title-bar-text">Pinball.exe</div>
+            <div class="title-bar-controls">
+                <button class="title-bar-button">_</button>
+                <button class="title-bar-button">□</button>
+                <button class="title-bar-button">x</button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="menu-bar">
+                <div class="menu-item">Game</div>
+                <div class="menu-item">Help</div>
+            </div>
+
+            <div class="game-container">
+                <div class="score-display">
+                    <div class="score-label">SCORE</div>
+                    <div class="score-value" id="score">0</div>
+                </div>
+
+                <div class="playfield">
+                    <!-- Ball -->
+                    <div class="ball" id="ball"></div>
+
+                    <!-- Flippers -->
+                    <div class="flipper flipper-left" id="flipper-left">
+                        <div class="flipper-rod"></div>
+                    </div>
+                    <div class="flipper flipper-right" id="flipper-right">
+                        <div class="flipper-rod"></div>
+                    </div>
+
+                    <!-- Drain area -->
+                    <div class="drain"></div>
+                </div>
+
+                <div class="controls-section">
+                    <div class="lives-display">
+                        <span>LIVES:</span>
+                        <span id="lives">3</span>
+                    </div>
+                    <button class="btn-launch" id="launch-btn">LAUNCH</button>
+                    <button class="btn-reset" id="reset-btn">NEW GAME</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
