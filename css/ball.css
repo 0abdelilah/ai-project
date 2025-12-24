@@ -1,74 +1,56 @@
-
-/* Ball */
 .ball {
     position: absolute;
-    width: 16px;
-    height: 16px;
-    /* 1. Core Shadow: Deepened the gradient for more contrast */
-    background: radial-gradient(circle at 35% 35%, #ffffff 0%, #666 40%, #111 100%);
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at 35% 35%, #ffffff 0%, #ff0202 40%, #111 100%);
     border-radius: 50%;
-    
-    /* 2. Form Shadow: Inset shadows create internal depth */
-    box-shadow: 
+    box-shadow:
         inset -2px -2px 4px rgba(0, 0, 0, 0.8),
         inset 1px 1px 1px rgba(255, 255, 255, 0.4);
-        
     z-index: 50;
     left: 172px;
-    top: 140px;
+    bottom: 380px;
 }
 
-/* 3. The Floor Shadow (Contact + Penumbra) */
 .ball::after {
     content: "";
     position: absolute;
-    width: 140%;      /* Wider than the ball for a soft look */
-    height: 40%;       /* Flattened perspective */
+    width: 140%;
+    height: 40%;
     background: rgba(0, 0, 0, 0.6);
     border-radius: 50%;
-    bottom: -15%;      /* Adjusted positioning */
-    left: -20%;        /* Centered relative to the wider width */
-    filter: blur(4px); /* Heavy blur for a soft shadow */
+    bottom: -15%;
+    left: -20%;
+    filter: blur(4px);
     z-index: -1;
-    
-    /* 4. Contact Patch: A second, darker shadow right at the base */
     box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.8);
 }
+
 /* Flippers */
 .flipper {
     position: absolute;
+    bottom: 47px;
     z-index: 30;
-    bottom: 40px;
+    width: 90px;
+    height: 8px;
 }
 
 .flipper-left {
-    left: 80px;
+    transform: rotate(30deg);
+    left: 83px;
 }
-
 .flipper-right {
-    right: 80px;
+    transform: rotate(-30deg);
+    right: 83px;
 }
 
 .flipper-rod {
-    position: absolute;
-    height: 8px;
-    background: linear-gradient(to bottom, #ffff99, #ffcc00);
-    border-radius: 4px;
-    transform-origin: left center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), inset -1px -1px 0 rgba(0, 0, 0, 0.2);
-}
-
-.flipper-left .flipper-rod {
-    width: 90px;
-    transform-origin: left center;
-    border: 1px solid #ff9900;
-}
-
-.flipper-right .flipper-rod {
-    width: 90px;
-    transform-origin: right center;
-    border: 1px solid #ff9900;
-    margin-left: auto;
+    width: 100%;
+    height: 12px;
+    background-image: url("../images/flipper.png");
+    background-size: 100% 100%; /* stretch to exact width & height */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5), inset -1px -1px 0 rgba(0,0,0,0.2);
+    border-radius: 15px;
 }
 
 .flipper-left.active .flipper-rod {
